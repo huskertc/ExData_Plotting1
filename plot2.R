@@ -26,8 +26,7 @@ if(exists("mydata")==FALSE)
 	}
 #
 # Create plot2.png, line plot of Global Active Power
-# Default size is 480x480 pixels
-png(file = "plot2.png")
+png(file = "plot2.png", width=480, height=480)
 plot(mydata$date_time, mydata$Global_active_power,type="l",xlab="",ylab="Global Active Power (kilowatts)")
 dev.off()
 

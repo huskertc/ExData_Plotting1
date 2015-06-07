@@ -26,8 +26,7 @@ if(exists("mydata")==FALSE)
 	}
 #
 # Create plot1.png, histogram of Global Active Power
-# Default size is 480x480 pixels
-png(file = "plot1.png")
+png(file = "plot1.png", width=480, height=480)
 hist(mydata$Global_active_power,xlab="Global Active Power (kilowatts)",ylab="Frequency",
 	main="Global Active Power", col="red")
 dev.off()

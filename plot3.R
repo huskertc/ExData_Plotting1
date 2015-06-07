@@ -26,13 +26,12 @@ if(exists("mydata")==FALSE)
 	}
 #
 # Create plot3.png, line plots of sum_meters
-# Default size is 480x480 pixels
-png(file = "plot3.png")
+png(file = "plot3.png", width=480, height=480)
 with (mydata, {
 	plot(date_time, Sub_metering_1, type="l", xlab="", ylab="Energy sub metering",col="black")
 	points(date_time, Sub_metering_2, type="l", col="red")
 	points(date_time, Sub_metering_3, type="l", col="blue")
-	legend ("topright", pch="-", col=c("black","red","blue"), 
+	legend ("topright", lwd=2, col=c("black","red","blue"), 
 		legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 	})
 dev.off()

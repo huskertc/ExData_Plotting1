@@ -26,8 +26,7 @@ if(exists("mydata")==FALSE)
 	}
 #
 # Create plot4.png, four-panel
-# Default size is 480x480 pixels
-png(file = "plot4.png")
+png(file = "plot4.png", width=480, height=480)
 par(mfrow = c(2,2))
 # Upper Left Plot
 plot(mydata$date_time, mydata$Global_active_power,type="l",xlab="",ylab="Global Active Power")
@@ -38,7 +37,7 @@ with (mydata, {
 	plot(date_time, Sub_metering_1, type="l", xlab="", ylab="Energy sub metering",col="black")
 	points(date_time, Sub_metering_2, type="l", col="red")
 	points(date_time, Sub_metering_3, type="l", col="blue")
-	legend ("topright", pch="-", col=c("black","red","blue"), 
+	legend ("topright", lwd=1, col=c("black","red","blue"), 
 		legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 	})
 # Lower Right Plot
